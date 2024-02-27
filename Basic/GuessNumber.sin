@@ -1,0 +1,20 @@
+//猜數字 提示大小
+int i; //輸入的數值
+int count = 1; //計算猜的次數
+int ans; //數值真正解答
+
+Random rnd = new Random();
+ans = rnd.Next(1,11);     //設定隨機產生的數字
+while(true)
+{
+    Console.Write("輸入要猜的數字: ");
+    i=int.Parse(Console.ReadLine());
+    if (i > ans)
+        Console.WriteLine("輸入小一點");
+    else if (i < ans)
+        Console.WriteLine("輸入大一點");
+    else
+        break;
+    count++;
+}
+Console.WriteLine($"花{count}次猜中");
